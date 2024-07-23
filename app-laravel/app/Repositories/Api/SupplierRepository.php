@@ -17,4 +17,17 @@ class SupplierRepository implements ISupplierRepository{
         
         return (object) $supplier->toArray();
     }
+
+    public function update(string $id, SupplierDTO $data): stdClass | null {
+        $supplier = $this->model->find($id);
+        $supplier->update((array) $data);
+        
+        return (object) $supplier->toArray();
+    }
+
+    public function findOne(string $id): stdClass | null {
+        $supplier = $this->model->find($id);
+
+        return $supplier ?(object) $supplier->toArray() :null;
+    }
 }
