@@ -14,9 +14,9 @@ class SupplierService implements ISupplierService {
     ) {}
 
     public function index() {
-        $supplier = $this->repository->index();
+        $suppliers = $this->repository->index();
         
-        return $supplier;
+        return $suppliers;
     }
 
     public function store(SupplierDTO $data): stdClass {

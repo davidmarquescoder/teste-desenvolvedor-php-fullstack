@@ -13,9 +13,9 @@ class SupplierRepository implements ISupplierRepository{
     ) {}
 
     public function index() {
-        $supplier = $this->model->paginate(10);
+        $suppliers = $this->model->paginate(10);
         
-        return $supplier;
+        return $suppliers;
     }
     
     public function store(SupplierDTO $data): stdClass{
