@@ -31,6 +31,11 @@ class SupplierRepository implements ISupplierRepository{
         return (object) $supplier->toArray();
     }
 
+    public function destroy(string $id): void {
+        $supplier = $this->model->find($id);
+        $supplier->destroy($id);
+    }
+
     public function findOne(string $id): stdClass | null {
         $supplier = $this->model->find($id);
 
