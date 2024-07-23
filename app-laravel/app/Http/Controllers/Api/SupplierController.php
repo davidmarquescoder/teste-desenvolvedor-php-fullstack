@@ -31,7 +31,13 @@ class SupplierController extends Controller
 
     public function show(string $id)
     {
-        //
+        try {
+            $supplier = $this->service->show($id);
+    
+            return response()->json($supplier, 200);
+        } catch(\Exception $error) {
+            return response()->json($error->getMessage(), 500);
+        }
     }
 
     public function update(SupplierRequest $request, string $id)
