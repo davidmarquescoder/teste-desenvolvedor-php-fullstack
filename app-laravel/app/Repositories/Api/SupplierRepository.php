@@ -12,6 +12,12 @@ class SupplierRepository implements ISupplierRepository{
         protected Supplier $model,
     ) {}
 
+    public function index() {
+        $supplier = $this->model->paginate(10);
+        
+        return $supplier;
+    }
+    
     public function store(SupplierDTO $data): stdClass{
         $supplier = $this->model->create((array) $data);
         
