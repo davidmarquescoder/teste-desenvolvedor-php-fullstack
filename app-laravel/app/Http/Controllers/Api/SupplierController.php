@@ -18,7 +18,7 @@ class SupplierController extends Controller
         try {
             $suppliers = $this->service->index();
     
-            return response()->json($suppliers, 200);
+            return response()->json($suppliers, 200, [], JSON_UNESCAPED_SLASHES);
         } catch(\Exception $error) {
             return response()->json($error->getMessage(), 500);
         }
