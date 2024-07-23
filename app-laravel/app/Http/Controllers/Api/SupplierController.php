@@ -2,11 +2,17 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\DTOS\Api\SupplierDTO;
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Http\Requests\SupplierRequest;
+use App\Interfaces\Api\ISupplierService;
 
 class SupplierController extends Controller
 {
+    public function __construct(
+        protected ISupplierService $service,
+    ) {}
+
     /**
      * Display a listing of the resource.
      */
@@ -18,9 +24,17 @@ class SupplierController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(SupplierRequest $request)
     {
-        //
+        try {
+            $supplier = $this->service->store(
+                SupplierDTO::makeFromRequest($request)
+            );
+    
+            return response()->json($supplier, 201);
+        } catch(\Exception $error) {
+            return response()->json($error->getMessage(), 500);
+        }
     }
 
     /**
@@ -34,7 +48,7 @@ class SupplierController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(SupplierRequest $request, string $id)
     {
         //
     }
