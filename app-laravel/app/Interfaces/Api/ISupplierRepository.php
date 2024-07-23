@@ -7,4 +7,6 @@ use stdClass;
 
 interface ISupplierRepository {
     public function store(SupplierDTO $data): stdClass;
+    public function update(string $id, SupplierDTO $data): stdClass | null;
+    public function findOne(string $id): stdClass | null;
 }
