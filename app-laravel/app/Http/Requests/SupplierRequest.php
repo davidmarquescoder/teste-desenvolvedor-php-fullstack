@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class SupplierRequest extends FormRequest
 {
@@ -27,8 +28,8 @@ class SupplierRequest extends FormRequest
                 'required',
                 'string',
                 'max:18',
-                'unique:suppliers',
                 'regex:/^\d{3}\.\d{3}\.\d{3}\-\d{2}$|^\d{2}\.\d{3}\.\d{3}\/\d{4}\-\d{2}$/',
+                Rule::unique('suppliers')->ignore($this->supplier),
             ],
             'contact' => 'required|string|max:255',
             'address' => 'required|string',
