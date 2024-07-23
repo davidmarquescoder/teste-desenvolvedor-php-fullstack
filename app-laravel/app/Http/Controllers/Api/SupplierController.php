@@ -53,6 +53,12 @@ class SupplierController extends Controller
 
     public function destroy(string $id)
     {
-        //
+        try {
+            $this->service->destroy($id);
+    
+            return response()->json([], 204);
+        } catch(\Exception $error) {
+            return response()->json($error->getMessage(), 500);
+        }
     }
 }
