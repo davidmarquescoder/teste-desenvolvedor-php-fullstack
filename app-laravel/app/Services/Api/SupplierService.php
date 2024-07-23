@@ -33,6 +33,11 @@ class SupplierService implements ISupplierService {
         return $supplier;
     }
 
+    public function destroy(string $id): void {
+        $this->validateSupplierExists($id);
+        $this->repository->destroy($id);
+    }
+
     private function validateSupplierExists(string $id) {
         $supplier = $this->repository->findOne($id);
         
