@@ -30,8 +30,8 @@ class SupplierRequest extends FormRequest
                 'unique:suppliers',
                 'regex:/^\d{3}\.\d{3}\.\d{3}\-\d{2}$|^\d{2}\.\d{3}\.\d{3}\/\d{4}\-\d{2}$/',
             ],
-            'contact' => 'nullable|string|max:255',
-            'address' => 'nullable|string',
+            'contact' => 'required|string|max:255',
+            'address' => 'required|string',
         ];
     }
 
@@ -42,6 +42,8 @@ class SupplierRequest extends FormRequest
             'document_number.required' => 'O CNPJ ou CPF é obrigatório.',
             'document_number.unique' => 'O CNPJ ou CPF já está em uso.',
             'document_number.regex' => 'O formato do CNPJ ou CPF é inválido.',
+            'contact.required' => 'O contato da empresa é obrigatório.',
+            'address.required' => 'O endereço da empresa é obrigatório.',
         ];
     }
 }
