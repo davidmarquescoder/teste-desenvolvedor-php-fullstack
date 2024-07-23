@@ -19,6 +19,13 @@ class SupplierService implements ISupplierService {
         return $supplier;
     }
     
+    public function show(string $id): stdClass | null {
+        $this->validateSupplierExists($id);
+        $supplier = $this->repository->show($id);
+        
+        return $supplier;
+    }
+    
     public function update(string $id, SupplierDTO $data): stdClass | null {
         $this->validateSupplierExists($id);
         $supplier = $this->repository->update($id, $data);
