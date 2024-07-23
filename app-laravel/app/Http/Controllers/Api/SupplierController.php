@@ -15,7 +15,13 @@ class SupplierController extends Controller
 
     public function index()
     {
-        //
+        try {
+            $suppliers = $this->service->index();
+    
+            return response()->json($suppliers, 200);
+        } catch(\Exception $error) {
+            return response()->json($error->getMessage(), 500);
+        }
     }
 
     public function store(SupplierRequest $request)
