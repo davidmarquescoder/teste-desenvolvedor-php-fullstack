@@ -4,10 +4,9 @@
       <h1 class="main-title">DAVID<span class="main-title-span">M</span></h1>
     </div>
     <div class="navbar-links">
+      <RouterLink class="menu-links" to="/">Home</RouterLink>
       <RouterLink class="menu-links" to="/register">Register</RouterLink>
-      <RouterLink class="menu-links" to="/search">Search</RouterLink>
       <RouterLink class="menu-links" to="/edit">Edit</RouterLink>
-      <RouterLink class="menu-links" to="/delete">Delete</RouterLink>
     </div>
   </nav>
 </template>
