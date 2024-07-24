@@ -20,7 +20,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* background-color: #222; */
+  background-color: #222;
 }
 
 @media (max-width: 630px) {
