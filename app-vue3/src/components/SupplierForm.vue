@@ -3,7 +3,14 @@
     <form class="row g-3 needs-validation" novalidate>
       <div class="col-md-4">
         <label for="validationCustom01" class="form-label">Nome / Empresa</label>
-        <input type="text" class="form-control" id="validationCustom01" value="" required />
+        <input
+          type="text"
+          class="form-control"
+          id="validationCustom01"
+          value=""
+          placeholder="Ex:  StartGov"
+          required
+        />
         <div class="valid-feedback">Looks good!</div>
       </div>
 
@@ -38,7 +45,13 @@
 
       <div class="col-md-6">
         <label for="validationCustom03" class="form-label">Cidade</label>
-        <input type="text" class="form-control" id="validationCustom03" required />
+        <input
+          type="text"
+          class="form-control"
+          id="validationCustom03"
+          placeholder="Ex: Imperatriz"
+          required
+        />
         <div class="invalid-feedback">Por favor informe uma cidade válida.</div>
       </div>
 
@@ -79,7 +92,13 @@
 
       <div class="col-md-3">
         <label for="validationCustom05" class="form-label">CEP</label>
-        <input type="text" class="form-control" id="validationCustom05" required />
+        <input
+          type="text"
+          class="form-control"
+          id="validationCustom05"
+          placeholder="Ex: 65900-000"
+          required
+        />
         <div class="invalid-feedback">Por favor informe um CEP válido.</div>
       </div>
 
@@ -97,7 +116,13 @@
 
       <div class="col-md-3">
         <label for="validationCustom05" class="form-label">Contato</label>
-        <input type="tel" class="form-control" id="validationCustom05" required />
+        <input
+          type="tel"
+          class="form-control"
+          id="validationCustom05"
+          placeholder="(99) 9 9999-9999"
+          required
+        />
         <div class="invalid-feedback">Por favor informe um Contato válido.</div>
       </div>
 
