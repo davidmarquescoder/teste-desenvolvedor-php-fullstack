@@ -13,7 +13,7 @@ class SupplierRepository implements ISupplierRepository{
     ) {}
 
     public function index() {
-        $suppliers = $this->model->paginate(10);
+        $suppliers = $this->model->paginate(6);
         
         return $suppliers;
     }
