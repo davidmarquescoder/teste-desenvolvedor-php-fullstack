@@ -72,13 +72,25 @@
       </div>
 
       <div class="col-12">
-        <button class="btn btn-primary" type="submit">Cadastrar</button>
+        <button class="btn btn-primary" type="submit">{{ buttonText }}</button>
       </div>
     </form>
   </div>
 </template>
 
-<script></script>
+<script>
+export default {
+  data() {
+    return {}
+  },
+  props: {
+    buttonText: {
+      type: String,
+      default: 'Button'
+    }
+  }
+}
+</script>
 
 <style>
 .container {

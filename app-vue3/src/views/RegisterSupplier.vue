@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <SupplierForm />
+    <SupplierForm buttonText="Cadastrar" />
   </div>
 </template>
 
