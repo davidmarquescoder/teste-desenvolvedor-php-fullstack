@@ -18,13 +18,13 @@
             </div>
           </div>
           <div>
-            <button
+            <a
               id="btn-edit"
               class="btn btn-outline-primary btn-sm me-2"
-              @click="editSupplier(supplier.id)"
+              @click="goToEdit(supplier.id)"
             >
               Editar
-            </button>
+            </a>
             <button
               id="btn-delete"
               class="btn btn-outline-danger btn-sm"
@@ -98,6 +98,10 @@ export default {
       await deleteSupplier(id)
 
       this.suppliers.data = this.suppliers.data.filter((supplier) => supplier.id !== id)
+    },
+
+    goToEdit(id) {
+      this.$router.push({ name: 'edit', params: { id } })
     }
   },
 

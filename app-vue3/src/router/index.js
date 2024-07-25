@@ -17,7 +17,7 @@ const router = createRouter({
       component: RegisterSupplier
     },
     {
-      path: '/edit',
+      path: '/edit/:id',
       name: 'edit',
       component: EditSupplier
     }
