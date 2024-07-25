@@ -12,7 +12,6 @@
           v-model="formData.name_or_company"
           required
         />
-        <div class="valid-feedback">Tudo certo!</div>
         <div class="invalid-feedback">Por favor, informe um nome ou empresa.</div>
       </div>
 
@@ -27,7 +26,6 @@
           v-model="formData.document_number"
           required
         />
-        <div class="valid-feedback">Tudo certo!</div>
         <div class="invalid-feedback">Por favor, informe um CPF ou CNPJ válido.</div>
       </div>
 
