@@ -6,7 +6,6 @@
     <div class="navbar-links">
       <RouterLink class="menu-links" to="/">Home</RouterLink>
       <RouterLink class="menu-links" to="/register">Register</RouterLink>
-      <RouterLink class="menu-links" to="/edit">Edit</RouterLink>
     </div>
   </nav>
 </template>
