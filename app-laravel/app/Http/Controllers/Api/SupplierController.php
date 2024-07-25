@@ -20,7 +20,7 @@ class SupplierController extends Controller
     
             return response()->json($suppliers, 200, [], JSON_UNESCAPED_SLASHES);
         } catch(\Exception $error) {
-            return response()->json($error->getMessage(), 500);
+            return response()->json(['message' => $error->getMessage()], 500);
         }
     }
 
@@ -31,7 +31,7 @@ class SupplierController extends Controller
     
             return response()->json($supplier, 201);
         } catch(\Exception $error) {
-            return response()->json($error->getMessage(), 500);
+            return response()->json(['message' => $error->getMessage()], 500);
         }
     }
 
@@ -42,7 +42,7 @@ class SupplierController extends Controller
     
             return response()->json($supplier, 200);
         } catch(\Exception $error) {
-            return response()->json($error->getMessage(), 500);
+            return response()->json(['message' => $error->getMessage()], 500);
         }
     }
 
@@ -53,7 +53,7 @@ class SupplierController extends Controller
     
             return response()->json($supplier, 200);
         } catch(\Exception $error) {
-            return response()->json($error->getMessage(), 500);
+            return response()->json(['message' => $error->getMessage()], 500);
         }
     }
 
@@ -64,7 +64,7 @@ class SupplierController extends Controller
     
             return response()->json([], 204);
         } catch(\Exception $error) {
-            return response()->json($error->getMessage(), 500);
+            return response()->json(['message' => $error->getMessage()], 500);
         }
     }
 }
