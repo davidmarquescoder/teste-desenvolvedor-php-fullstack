@@ -1,15 +1,15 @@
 import router from '@/router'
 import axios from 'axios'
 
-export default async function postSupplier(formData) {
+export default async function deleteSupplier(id) {
   return await axios
-    .post(import.meta.env.VITE_API_ENDPOINT_SUPPLIERS, formData)
+    .delete(`${import.meta.env.VITE_API_ENDPOINT_SUPPLIERS}/${id}`)
     .then((response) => {
       router.push('/')
-      return response.data
+      return response
     })
     .catch((error) => {
-      router.push('/register')
+      router.push('/')
       return error.response.data.message
     })
 }

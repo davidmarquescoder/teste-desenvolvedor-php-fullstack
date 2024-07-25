@@ -17,6 +17,22 @@
               </div>
             </div>
           </div>
+          <div>
+            <button
+              id="btn-edit"
+              class="btn btn-outline-primary btn-sm me-2"
+              @click="editSupplier(supplier.id)"
+            >
+              Editar
+            </button>
+            <button
+              id="btn-delete"
+              class="btn btn-outline-danger btn-sm"
+              @click="destroySupplier(supplier.id)"
+            >
+              Excluir
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -48,6 +64,7 @@
 
 <script>
 import getSuppliers from '../services/suppliers/getSuppliers.js'
+import deleteSupplier from '@/services/suppliers/deleteSupplier.js'
 
 export default {
   data() {
@@ -75,6 +92,12 @@ export default {
       if (suppliers) {
         this.suppliers = suppliers
       }
+    },
+
+    async destroySupplier(id) {
+      await deleteSupplier(id)
+
+      this.suppliers.data = this.suppliers.data.filter((supplier) => supplier.id !== id)
     }
   },
 
@@ -122,6 +145,14 @@ export default {
 .info-label {
   font-weight: 500;
   color: #065f46;
+}
+
+#btn-edit {
+  margin: 10px;
+}
+
+#btn-delete {
+  margin: 10px;
 }
 
 .pagination .page-item.disabled .page-link {
