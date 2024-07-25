@@ -43,7 +43,12 @@ class SupplierService implements ISupplierService {
     
     public function update(string $id, SupplierDTO $data): stdClass | null {
         $this->validateSupplierExists($id);
-        $this->validateCNPJ($data->document_number);
+        
+        $cnpj = $this->sanitizeCNPJ($data->document_number);
+        
+        if($this->isCNPJ($cnpj)) {
+            $this->validateCNPJ($cnpj);
+        }
 
         $supplier = $this->repository->update($id, $data);
         
