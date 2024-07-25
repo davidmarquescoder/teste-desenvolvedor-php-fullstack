@@ -1,3 +1,4 @@
+import store from "@/store";
 import axios from 'axios'
 
 export default async function getSupplierById(id) {
@@ -13,6 +14,6 @@ export default async function getSupplierById(id) {
       return response.data
     })
     .catch((error) => {
-      return error.response.data.message
+      return store.dispatch("setMessage", error.response.data.message);
     })
 }

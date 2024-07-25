@@ -1,4 +1,5 @@
 import router from '@/router'
+import store from "@/store";
 import axios from 'axios'
 
 export default async function postSupplier(formData) {
@@ -6,10 +7,12 @@ export default async function postSupplier(formData) {
     .post(import.meta.env.VITE_API_ENDPOINT_SUPPLIERS, formData)
     .then((response) => {
       router.push('/')
+      
+      store.dispatch("setMessage", "Fornecedor criado com sucesso!");
       return response.data
     })
     .catch((error) => {
       router.push('/register')
-      return error.response.data.message
+      return store.dispatch("setMessage", error.response.data.message);
     })
 }
