@@ -1,4 +1,3 @@
-// import router from '@/router'
 import axios from 'axios'
 
 export default async function getSuppliers(page = 1) {
